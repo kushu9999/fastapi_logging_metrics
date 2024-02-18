@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+
+  web:
+    container_name: Books_backend
+    build:
+      context: services/Books_backend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8001
+    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+    volumes:
+      - ./services/Books_backend:/app
+    env_file:
+      - .env
+    networks:
+      - Books_backend
+
+networks:
+  Books_backend:
