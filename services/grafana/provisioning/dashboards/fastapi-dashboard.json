@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "d0a78a43-c453-4f5a-b205-49be52b98bd4"
+        "uid": "bdb87718-1653-43d3-bf87-11905702a7c2"
       },
       "gridPos": {
         "h": 7,
@@ -47,7 +47,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "d0a78a43-c453-4f5a-b205-49be52b98bd4"
+            "uid": "bdb87718-1653-43d3-bf87-11905702a7c2"
           },
           "editorMode": "builder",
           "expr": "{severity=\"info\"} != `/metrics`",
@@ -61,7 +61,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "d0a78a43-c453-4f5a-b205-49be52b98bd4"
+        "uid": "bdb87718-1653-43d3-bf87-11905702a7c2"
       },
       "gridPos": {
         "h": 7,
@@ -84,10 +84,9 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "d0a78a43-c453-4f5a-b205-49be52b98bd4"
+            "uid": "bdb87718-1653-43d3-bf87-11905702a7c2"
           },
-          "editorMode": "builder",
-          "expr": "{severity=\"error\"} |= ``",
+          "expr": "{severity=\"error\"}",
           "queryType": "range",
           "refId": "A"
         }
@@ -872,7 +871,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -991,7 +991,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -1051,7 +1052,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "3s",
+  "refresh": "auto",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -1080,6 +1081,6 @@
   "timezone": "",
   "title": "FastAPI Dashboard",
   "uid": "_eX4mpl3",
-  "version": 5,
+  "version": 1,
   "weekStart": ""
 }
