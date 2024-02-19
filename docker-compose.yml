@@ -24,7 +24,7 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - ./services/prometheus/prometheus-data:/prometheus
+      # - ./services/prometheus/prometheus-data:/prometheus
       - ./services/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     networks:
       - Books_backend
@@ -38,7 +38,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./services/grafana/data:/var/lib/grafana
+      # - ./services/grafana/data:/var/lib/grafana
       - ./services/grafana/provisioning:/etc/grafana/provisioning
     env_file:
       - ./services/grafana/config.monitoring
