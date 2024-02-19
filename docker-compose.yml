@@ -2,18 +2,57 @@ version: '3.9'
 
 services:
 
-  web:
+  app:
     container_name: Books_backend
     build:
       context: services/Books_backend
       dockerfile: Dockerfile
     ports:
-      - 8000:8001
-    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+      - 8000:8000
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
       - ./services/Books_backend:/app
     env_file:
       - .env
+    networks:
+      - Books_backend
+
+  prometheus:
+    image: prom/prometheus:latest
+    restart: unless-stopped
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./services/prometheus/prometheus-data:/prometheus
+      - ./services/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - Books_backend
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    volumes:
+      - ./services/grafana/data:/var/lib/grafana
+      - ./services/grafana/provisioning:/etc/grafana/provisioning
+    env_file:
+      - ./services/grafana/config.monitoring
+    networks:
+      - Books_backend
+
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    ports:
+      - "3100:3100"
+    # volumes:
+    #   # - ./services/loki/data:/var/lib/loki:rw
+    #   - ./services/loki/config:/etc/loki/
     networks:
       - Books_backend
 

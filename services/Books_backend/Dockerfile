@@ -36,7 +36,7 @@ EXPOSE 8001
 COPY . .
 
 # CMD instruction for local
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 # CMD instruction for prod
 # CMD ["gunicorn", "-w", "6", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8001", "main:app", "--reload"]

@@ -6,4 +6,5 @@ aiosqlite
 python-dotenv
 boto3
 sentry-sdk[fastapi]
-
+prometheus-fastapi-instrumentator
+python-logging-loki
