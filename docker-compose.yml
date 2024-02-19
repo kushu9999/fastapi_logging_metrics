@@ -40,6 +40,7 @@ services:
     volumes:
       # - ./services/grafana/data:/var/lib/grafana
       - ./services/grafana/provisioning:/etc/grafana/provisioning
+      - ./services/grafana/config/grafana.ini:/etc/grafana/grafana.ini
     env_file:
       - ./services/grafana/config.monitoring
     networks:
