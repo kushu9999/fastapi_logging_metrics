@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "bdb87718-1653-43d3-bf87-11905702a7c2"
+        "uid": "a72b157d-a4a1-4b49-830d-8eb0caa3beb2"
       },
       "gridPos": {
         "h": 7,
@@ -47,10 +47,9 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "bdb87718-1653-43d3-bf87-11905702a7c2"
+            "uid": "a72b157d-a4a1-4b49-830d-8eb0caa3beb2"
           },
-          "editorMode": "builder",
-          "expr": "{severity=\"info\"} != `/metrics`",
+          "expr": "{severity=\"info\"}",
           "queryType": "range",
           "refId": "A"
         }
@@ -61,7 +60,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "bdb87718-1653-43d3-bf87-11905702a7c2"
+        "uid": "a72b157d-a4a1-4b49-830d-8eb0caa3beb2"
       },
       "gridPos": {
         "h": 7,
@@ -84,7 +83,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "bdb87718-1653-43d3-bf87-11905702a7c2"
+            "uid": "a72b157d-a4a1-4b49-830d-8eb0caa3beb2"
           },
           "expr": "{severity=\"error\"}",
           "queryType": "range",
@@ -1052,14 +1051,14 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "auto",
+  "refresh": "3s",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
