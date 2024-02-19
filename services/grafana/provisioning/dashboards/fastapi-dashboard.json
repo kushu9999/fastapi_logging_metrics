@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "a72b157d-a4a1-4b49-830d-8eb0caa3beb2"
+        "uid": "P8E80F9AEF21F6940"
       },
       "gridPos": {
         "h": 7,
@@ -47,9 +47,10 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "a72b157d-a4a1-4b49-830d-8eb0caa3beb2"
+            "uid": "P8E80F9AEF21F6940"
           },
-          "expr": "{severity=\"info\"}",
+          "editorMode": "builder",
+          "expr": "{severity=\"info\"} != `/metrics`",
           "queryType": "range",
           "refId": "A"
         }
@@ -60,7 +61,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "a72b157d-a4a1-4b49-830d-8eb0caa3beb2"
+        "uid": "P8E80F9AEF21F6940"
       },
       "gridPos": {
         "h": 7,
@@ -83,7 +84,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "a72b157d-a4a1-4b49-830d-8eb0caa3beb2"
+            "uid": "P8E80F9AEF21F6940"
           },
           "expr": "{severity=\"error\"}",
           "queryType": "range",
@@ -1051,14 +1052,14 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "3s",
+  "refresh": "auto",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
